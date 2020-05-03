@@ -4,12 +4,12 @@ class Solution:
     def firstBadVersion(self, n):
         return self.bs(0,n)
 
-    def bs(self,s,e):
+    def nw(self,s,e):
         if e==s:
             return e
         mid=s+ (e-s)//2
         cur=isBadVersion(mid)    
         if cur==True:
-            return self.bs(s,mid)
+            return self.nw(s,mid)
         if cur==False:
-            return self.bs(mid+1,e)
+            return self.nw(mid+1,e)
